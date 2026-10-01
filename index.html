@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бонита и её длинная челка — интерактивный комикс для детей</title>
+<meta name="description" content="Весёлый детский комикс про йоркширского терьера Бониту, 12 лет: по утрам она гремит пустыми мисками, чтобы разбудить Вику и Андрея, а по пути врезается в боковой дверной косяк. Листается как паровозик.">
+<meta name="theme-color" content="#ffd23f">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Neucha&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐶</text></svg>">
+</head>
+<body>
+
+<div class="backdrop" aria-hidden="true">
+  <span class="sun"></span>
+  <span class="cloud c1"></span>
+  <span class="cloud c2"></span>
+  <span class="cloud c3"></span>
+  <span class="balloon b1">🦴</span>
+  <span class="balloon b2">🫧</span>
+  <span class="balloon b3">⭐</span>
+</div>
+
+<header class="masthead">
+  <p class="kicker">Интерактивный комикс · читать 3–6 лет · 1–3 минуты</p>
+  <h1 class="title">
+    <span class="title-name">Бонита</span>
+    <span class="title-and">и её</span>
+    <em class="title-fringe">длинная челка</em>
+  </h1>
+  <p class="tagline">
+    Йоркширский терьер, <b>12 лет</b>, вес <b>5 кг</b> — маленькая, но очень убедительная.
+    Каждое утро в 7:00 она бежит на кухню и <b>звонит в пустые миски</b>,
+    чтобы проснулись Вика и Андрей.
+    А потом по пути врезается в <b>боковой дверной косяк</b>. 🐾
+  </p>
+  <ul class="credits" aria-label="Счётчик сна">
+    <li><b>12</b><span>страниц</span></li>
+    <li><b>12</b><span>лет Боните</span></li>
+    <li><b>5</b><span>кг мурлыканья</span></li>
+    <li><b>1</b><span>испорченная челка</span></li>
+  </ul>
+</header>
+
+<main>
+  <section class="comic" aria-label="Комикс «Бонита и её длинная челка»">
+
+    <div class="stage" id="stage"
+         role="region"
+         aria-roledescription="карусель"
+         aria-label="Страницы комикса. Листайте стрелками влево и вправо или перетаскивайте.">
+      <div class="track" id="track"><!-- страницы собирает script.js --></div>
+    </div>
+
+    <div class="rail" aria-hidden="true">
+      <div class="rail-bed"></div>
+      <div class="engine" id="engine">
+        <svg viewBox="0 0 90 44" width="90" height="44">
+          <g class="steam">
+            <circle cx="52" cy="6" r="4" fill="#fff"/>
+            <circle cx="62" cy="1" r="6" fill="#fff" opacity=".8"/>
+            <circle cx="74" cy="5" r="4" fill="#fff" opacity=".6"/>
+          </g>
+          <rect x="4" y="16" width="14" height="22" rx="4" fill="#2f6f4e" stroke="#241c2b" stroke-width="3"/>
+          <rect x="18" y="10" width="42" height="28" rx="8" fill="#ff5d5d" stroke="#241c2b" stroke-width="3"/>
+          <rect x="30" y="0" width="10" height="12" rx="3" fill="#2f6f4e" stroke="#241c2b" stroke-width="3"/>
+          <circle cx="66" cy="20" r="12" fill="#ffd23f" stroke="#241c2b" stroke-width="3"/>
+          <path d="M70 14c4 3 4 9 0 12-4-3-4-9 0-12z" fill="#ff9f1c"/>
+          <circle cx="26" cy="22" r="6" fill="#7fd7ff" stroke="#241c2b" stroke-width="3"/>
+          <circle cx="38" cy="38" r="7" fill="#241c2b"/><circle cx="60" cy="38" r="7" fill="#241c2b"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button class="nav-btn" id="prev" type="button" aria-label="Предыдущая страница">◀</button>
+
+      <div class="dots" id="dots" role="tablist" aria-label="Страницы комикса"></div>
+
+      <button class="nav-btn" id="next" type="button" aria-label="Следующая страница">▶</button>
+    </div>
+
+    <p class="hint">
+      <span class="hint-pill">Тяни страницу в сторону — как паровозик! 🚂</span>
+      <button class="sound-btn" id="sound" type="button" aria-pressed="false">🔇 Звук: выкл</button>
+      <span class="counter" id="counter" aria-live="polite">Страница 1 / 12</span>
+    </p>
+
+  </section>
+
+  <section class="facts" aria-label="Факты о Боните">
+    <article class="fact">
+      <h2>👀 Челка-шторка</h2>
+      <p>18 сантиметров чёлки — это как занавеска на окне: мир видно, но не всё. А после расчёсывания занавеска уезжает вбок, и Бонита наконец видит, где сбоку дверной косяк.</p>
+    </article>
+    <article class="fact">
+      <h2>🥣 Будильник «Бонита»</h2>
+      <p>Три удара лапой по пустой миске звучат громче любого будильника. Вика слышит через две комнаты, Андрей — через весь дом.</p>
+    </article>
+    <article class="fact">
+      <h2>🚪 Боковой косяк</h2>
+      <p>Косяк — это стойка сбоку, в проёме двери, а не перекладина сверху. Для маленькой собачки он всегда ниже, чем кажется. Совет дня: расчесать чёлку и пригнуться.</p>
+    </article>
+    <article class="fact">
+      <h2>🎂 12 лет</h2>
+      <p>Она пережила три ремонта, двух котов и один Новый год с хлопушкой. Лапы стали короче, бодрость — меньше, а привычка будить людей в 7:00 — вечной.</p>
+    </article>
+  </section>
+
+  <noscript>
+    <p class="noscript">Для листания комикса нужен включённый JavaScript 🐶</p>
+  </noscript>
+</main>
+
+<footer class="footer">
+  <p>Комикс «Бонита и её длинная челка» · сделано с 🐾 и терпением</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
